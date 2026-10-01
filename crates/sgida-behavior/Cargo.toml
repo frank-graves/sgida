@@ -1,0 +1,17 @@
+# sgida-behavior: Mouse, scroll, typing models
+[package]
+name = "sgida-behavior"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+
+[dependencies]
+# nalgebra = "0.33"
+# rand_distr = "0.4"
+# kurbo = "0.11"
+# tokio.workspace = true
+
+[lints]
+workspace = true

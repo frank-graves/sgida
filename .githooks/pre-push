@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+echo "Running pre-push checks..."
+
+if ! cargo fmt --check; then
+    echo "ERROR: cargo fmt failed."
+    exit 1
+fi
+
+if ! cargo clippy --workspace --all-targets -- -D warnings; then
+    echo "ERROR: cargo clippy failed."
+    exit 1
+fi
+
+if ! cargo test --workspace --lib --bins --tests; then
+    echo "ERROR: cargo test failed."
+    exit 1
+fi
+
+echo "Pre-push checks passed."

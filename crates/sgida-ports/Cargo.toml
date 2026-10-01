@@ -1,0 +1,17 @@
+# sgida-ports: traits only; no tokio, no axum, no I/O
+[package]
+name = "sgida-ports"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+
+[dependencies]
+# async-trait.workspace = true
+# thiserror.workspace = true
+# uuid.workspace = true
+# bytes = { workspace = true, optional = true }
+
+[lints]
+workspace = true

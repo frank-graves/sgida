@@ -1,0 +1,28 @@
+# sgida-identity: deterministic profile generation
+[package]
+name = "sgida-identity"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+
+[dependencies]
+# rand.workspace = true
+# rand_chacha.workspace = true
+# serde.workspace = true
+# serde_json.workspace = true
+# chrono.workspace = true
+# chrono-tz.workspace = true
+# uuid.workspace = true
+# hkdf.workspace = true
+# sha2.workspace = true
+# secrecy.workspace = true
+# zeroize.workspace = true
+# petname.workspace = true
+
+[dev-dependencies]
+# proptest.workspace = true
+
+[lints]
+workspace = true

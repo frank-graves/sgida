@@ -1,0 +1,87 @@
+[workspace]
+resolver = "3"
+members = [
+    "crates/sgida-ports",
+    "crates/sgida-identity",
+    "crates/sgida-isolation",
+    "crates/sgida-orchestrator",
+    "crates/sgidad",
+    "crates/sgida-network",
+    "crates/sgida-target",
+    "crates/sgida-stealth",
+    "crates/sgida-behavior",
+    "crates/sgida-email",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+rust-version = "1.85"
+authors = ["Plutonium-Software"]
+repository = "https://github.com/frank-graves/sgida"
+
+[workspace.dependencies]
+# async
+# tokio = { version = "1", features = ["rt-multi-thread", "macros", "signal", "process", "time", "sync", "net"] }
+# async-trait = "0.1"
+# tokio-util = "0.7"
+# serialization
+# serde = { version = "1", features = ["derive"] }
+# serde_json = "1"
+# api
+# axum = "0.7"
+# tower = "0.4"
+# tower-http = { version = "0.5", features = ["trace", "limit"] }
+# storage
+# rusqlite = { version = "0.31", features = ["bundled"] }
+# dashmap = "5"
+# logging
+# tracing = "0.1"
+# tracing-subscriber = { version = "0.3", features = ["json"] }
+# cli
+# clap = { version = "4", features = ["derive"] }
+# config = "0.14"
+# errors
+# thiserror = "1"
+# anyhow = "1"
+# crypto
+# rand = "0.8"
+# rand_chacha = "0.3"
+# hkdf = "0.12"
+# sha2 = "0.10"
+# secrecy = { version = "0.8", features = ["alloc"] }
+# zeroize = "1"
+# utilities
+# uuid = { version = "1", features = ["v4", "serde"] }
+# bytes = "1"
+# chrono = { version = "0.4", features = ["serde"] }
+# chrono-tz = "0.9"
+# petname = "2"
+# tempfile = "3"
+# nix = { version = "0.28", features = ["sched", "mount", "hostname", "user"] }
+# rtnetlink = "0.14"
+# testing
+# proptest = "1"
+# mockall = "0.12"
+# criterion = { version = "0.5", features = ["html_reports"] }
+
+[workspace.lints.rust]
+unsafe_code = "warn"
+missing_debug_implementations = "warn"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+nursery = { level = "warn", priority = -1 }
+missing_const_for_fn = "allow"
+unwrap_used = "deny"
+expect_used = "warn"
+panic = "deny"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+strip = "symbols"
+opt-level = 3

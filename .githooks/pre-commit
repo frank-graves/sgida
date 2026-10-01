@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+
+echo "Running pre-commit checks..."
+
+if ! cargo fmt --check; then
+    echo "ERROR: cargo fmt failed. Run 'cargo fmt' to fix."
+    exit 1
+fi
+
+if ! cargo clippy --workspace --all-targets -- -D warnings; then
+    echo "ERROR: cargo clippy failed."
+    exit 1
+fi
+
+echo "Pre-commit checks passed."

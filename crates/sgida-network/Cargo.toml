@@ -1,0 +1,20 @@
+# sgida-network: Proxies, DNS, WireGuard
+[package]
+name = "sgida-network"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+
+[dependencies]
+# tokio.workspace = true
+# hickory-resolver = "0.24"
+# tokio-socks = "0.5"
+# boringtun = "0.5"
+# ipnet = "2"
+# reqwest = { version = "0.12", default-features = false, features = ["rustls-tls"] }
+# serde.workspace = true
+
+[lints]
+workspace = true

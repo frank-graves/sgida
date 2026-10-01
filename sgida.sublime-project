@@ -1,0 +1,16 @@
+{
+  "folders": [
+    {
+      "path": ".",
+      "folder_exclude_patterns": ["target", ".git"]
+    }
+  ],
+  "settings": {
+    "tab_size": 4,
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": "all",
+    "ensure_newline_at_eof_on_save": true,
+    "rulers": [100],
+    "word_wrap": false
+  }
+}

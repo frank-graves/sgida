@@ -1,0 +1,18 @@
+# sgida-target: Chromium control via CDP
+[package]
+name = "sgida-target"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+
+[dependencies]
+# chromiumoxide = "0.6"
+# tokio.workspace = true
+# scraper = "0.20"
+# url = "2"
+# serde.workspace = true
+
+[lints]
+workspace = true

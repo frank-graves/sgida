@@ -41,27 +41,12 @@ impl Credentials {
         let month = rng.gen_range(1..=12u32);
         let day = rng.gen_range(1..=28u32);
 
-        let birth_date = if let Some(d) = NaiveDate::from_ymd_opt(year, month, day) {
-            d
-        } else {
-            let mut y = 1990;
-            let mut m = 1;
-            let mut d = 1;
-            loop {
-                if let Some(date) = NaiveDate::from_ymd_opt(y, m, d) {
-                    break date;
-                }
-                d += 1;
-                if d > 28 {
-                    d = 1;
-                    m += 1;
-                    if m > 12 {
-                        m = 1;
-                        y += 1;
-                    }
-                }
-            }
-        };
+        // day in 1..=28 and month in 1..=12 are invariants from the
+        // RNG, so from_ymd_opt cannot return None for these inputs.
+        // If it somehow does, NaiveDate::MIN is used as an obviously-
+        // invalid date so that if this fallback were ever hit, the
+        // result would be visible on inspection.
+        let birth_date = NaiveDate::from_ymd_opt(year, month, day).unwrap_or(NaiveDate::MIN);
 
         Self {
             username,

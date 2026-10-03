@@ -1,3 +1,4 @@
+// crates/sgida-identity/tests/determinism.rs
 #![allow(clippy::unwrap_used)]
 //! Determinism tests for sgida-identity.
 
@@ -61,4 +62,28 @@ proptest::proptest! {
         prop_assert_eq!(p1.id, p2.id);
         prop_assert_eq!(p1.browser.user_agent, p2.browser.user_agent);
     }
+}
+
+#[test]
+fn profile_debug_does_not_leak_seed() {
+    let seed_bytes = [0xABu8; 32];
+    let p = Profile::from_seed(MasterSeed::from_bytes(seed_bytes)).unwrap();
+    let rendered = format!("{p:?}");
+    let leaked = format!("{seed_bytes:?}");
+    assert!(
+        !rendered.contains(&leaked),
+        "Profile Debug leaked the raw seed bytes: {rendered}"
+    );
+}
+
+#[test]
+fn behavior_debug_does_not_leak_seed() {
+    let seed_bytes = [0xCDu8; 32];
+    let bp = sgida_identity::behavior::BehaviorProfile::from_seed(&seed_bytes);
+    let rendered = format!("{bp:?}");
+    let leaked = format!("{seed_bytes:?}");
+    assert!(
+        !rendered.contains(&leaked),
+        "BehaviorProfile Debug leaked the raw seed bytes: {rendered}"
+    );
 }

@@ -23,7 +23,9 @@ pub struct Profile {
     /// The unique identifier for this profile.
     pub id: Uuid,
     /// The master seed used to generate this profile.
-    pub seed: [u8; 32],
+    // Retained for potential future re-derivation; Debug output redacts it.
+    #[expect(dead_code)]
+    pub(crate) seed: [u8; 32],
     /// Browser-specific attributes.
     pub browser: BrowserProfile,
     /// System-level attributes.
@@ -42,7 +44,7 @@ impl fmt::Debug for Profile {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("Profile")
             .field("id", &self.id)
-            .field("seed", &self.seed)
+            .field("seed", &"<redacted>")
             .field("browser", &self.browser)
             .field("system", &self.system)
             .field("network", &self.network)

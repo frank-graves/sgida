@@ -1,0 +1,150 @@
+# crates/sgida-identity/data/user_agents.toml
+[[entries]]
+browser = "Firefox"
+platform = "Win32"
+user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:128.0) Gecko/20100101 Firefox/128.0"
+oscpu = "Windows NT 10.0; Win64; x64"
+vendor = ""
+product_sub = "20100101"
+webgl_vendor = "Google Inc. (NVIDIA)"
+webgl_renderer = "ANGLE (NVIDIA, NVIDIA GeForce GTX 1660 Direct3D11 vs_5_0 ps_5_0)"
+
+[[entries]]
+browser = "Chrome"
+platform = "Win32"
+user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+oscpu = "Windows NT 10.0; Win64; x64"
+vendor = "Google Inc."
+product_sub = "20030107"
+webgl_vendor = "Google Inc. (NVIDIA)"
+webgl_renderer = "ANGLE (NVIDIA, NVIDIA GeForce GTX 1660 Direct3D11 vs_5_0 ps_5_0)"
+
+[[entries]]
+browser = "Firefox"
+platform = "MacIntel"
+user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:128.0) Gecko/20100101 Firefox/128.0"
+oscpu = "Intel Mac OS X 10.15"
+vendor = ""
+product_sub = "20100101"
+webgl_vendor = "Apple"
+webgl_renderer = "Apple GPU"
+
+[[entries]]
+browser = "Chrome"
+platform = "MacIntel"
+user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+oscpu = "Intel Mac OS X 10_15_7"
+vendor = "Google Inc."
+product_sub = "20030107"
+webgl_vendor = "Apple"
+webgl_renderer = "Apple GPU"
+
+[[entries]]
+browser = "Safari"
+platform = "MacIntel"
+user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15"
+oscpu = "Intel Mac OS X 10_15_7"
+vendor = "Apple Computer, Inc."
+product_sub = "20030107"
+webgl_vendor = "Apple"
+webgl_renderer = "Apple GPU"
+
+[[entries]]
+browser = "Firefox"
+platform = "Linux x86_64"
+user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"
+oscpu = "Linux x86_64"
+vendor = ""
+product_sub = "20100101"
+webgl_vendor = "Intel Inc."
+webgl_renderer = "Intel Iris OpenGL Engine"
+
+[[entries]]
+browser = "Chrome"
+platform = "Linux x86_64"
+user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+oscpu = "Linux x86_64"
+vendor = "Google Inc."
+product_sub = "20030107"
+webgl_vendor = "Intel Inc."
+webgl_renderer = "Intel Iris OpenGL Engine"
+
+[[entries]]
+browser = "Firefox"
+platform = "Win32"
+user_agent = "Mozilla/5.0 (Windows NT 11.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0"
+oscpu = "Windows NT 11.0; Win64; x64"
+vendor = ""
+product_sub = "20100101"
+webgl_vendor = "Google Inc. (AMD)"
+webgl_renderer = "ANGLE (AMD, AMD Radeon RX 580 Direct3D11 vs_5_0 ps_5_0)"
+
+[[entries]]
+browser = "Chrome"
+platform = "Win32"
+user_agent = "Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+oscpu = "Windows NT 11.0; Win64; x64"
+vendor = "Google Inc."
+product_sub = "20030107"
+webgl_vendor = "Google Inc. (AMD)"
+webgl_renderer = "ANGLE (AMD, AMD Radeon RX 580 Direct3D11 vs_5_0 ps_5_0)"
+
+[[entries]]
+browser = "Firefox"
+platform = "MacIntel"
+user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14.0; rv:129.0) Gecko/20100101 Firefox/129.0"
+oscpu = "Intel Mac OS X 14.0"
+vendor = ""
+product_sub = "20100101"
+webgl_vendor = "Apple"
+webgl_renderer = "Apple GPU"
+
+[[entries]]
+browser = "Chrome"
+platform = "MacIntel"
+user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+oscpu = "Intel Mac OS X 14_0"
+vendor = "Google Inc."
+product_sub = "20030107"
+webgl_vendor = "Apple"
+webgl_renderer = "Apple GPU"
+
+[[entries]]
+browser = "Safari"
+platform = "MacIntel"
+user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1 Safari/605.1.15"
+oscpu = "Intel Mac OS X 14_0"
+vendor = "Apple Computer, Inc."
+product_sub = "20030107"
+webgl_vendor = "Apple"
+webgl_renderer = "Apple GPU"
+
+[[entries]]
+browser = "Firefox"
+platform = "Linux x86_64"
+user_agent = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"
+oscpu = "Linux x86_64"
+vendor = ""
+product_sub = "20100101"
+webgl_vendor = "Intel Inc."
+webgl_renderer = "Intel Iris OpenGL Engine"
+
+[[entries]]
+browser = "Chrome"
+platform = "Linux x86_64"
+user_agent = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+oscpu = "Linux x86_64"
+vendor = "Google Inc."
+product_sub = "20030107"
+webgl_vendor = "Intel Inc."
+webgl_renderer = "Intel Iris OpenGL Engine"
+
+[[entries]]
+browser = "Firefox"
+platform = "Win32"
+user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0"
+oscpu = "Windows NT 10.0; Win64; x64"
+vendor = ""
+product_sub = "20100101"
+webgl_vendor = "Google Inc. (NVIDIA)"
+webgl_renderer = "ANGLE (NVIDIA, NVIDIA GeForce RTX 3060 Direct3D11 vs_5_0 ps_5_0)"

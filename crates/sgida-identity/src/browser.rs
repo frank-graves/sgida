@@ -1,8 +1,8 @@
 // crates/sgida-identity/src/browser.rs
 //! Browser profile attributes.
 
-use rand::seq::SliceRandom;
 use rand::SeedableRng;
+use rand::seq::SliceRandom;
 use rand_chacha::ChaCha12Rng;
 use serde::Deserialize;
 use std::sync::LazyLock;
@@ -60,6 +60,12 @@ static CATALOG: LazyLock<Result<Catalog, InternalError>> = LazyLock::new(|| {
 
 impl BrowserProfile {
     /// Generates a browser profile from a seed.
+    ///
+    /// # Errors
+    ///
+    /// Returns [`InternalError::EmptyCatalog`] if the embedded user
+    /// agent catalog contains no entries, or [`InternalError::CatalogParse`]
+    /// if the catalog failed to parse.
     pub fn from_seed(seed: &[u8; 32]) -> Result<Self, InternalError> {
         let mut rng = ChaCha12Rng::from_seed(*seed);
 

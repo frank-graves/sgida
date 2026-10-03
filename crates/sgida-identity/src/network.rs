@@ -1,8 +1,8 @@
 // crates/sgida-identity/src/network.rs
 //! Network profile attributes.
 
-use rand::seq::SliceRandom;
 use rand::SeedableRng;
+use rand::seq::SliceRandom;
 use rand_chacha::ChaCha12Rng;
 
 /// Network-level attributes.

@@ -24,12 +24,11 @@ pub enum InternalError {
 impl From<InternalError> for IdentityError {
     fn from(err: InternalError) -> Self {
         match err {
-            InternalError::Coherence(msg) => IdentityError::Incoherent(msg),
+            InternalError::Coherence(msg) => Self::Incoherent(msg),
             InternalError::EmptyCatalog => {
-                IdentityError::Generation("user agent catalog is empty".to_string())
+                Self::Generation("user agent catalog is empty".to_string())
             }
-            InternalError::CatalogParse(msg) => IdentityError::Generation(msg),
-            InternalError::Hkdf(msg) => IdentityError::Generation(msg),
+            InternalError::CatalogParse(msg) | InternalError::Hkdf(msg) => Self::Generation(msg),
         }
     }
 }

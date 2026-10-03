@@ -8,6 +8,11 @@ use crate::error::InternalError;
 use crate::profile::Profile;
 
 /// Validates the coherence of a profile.
+///
+/// # Errors
+///
+/// Returns [`InternalError::Coherence`] with a `rule N:` prefix when
+/// any of the six coherence rules fails.
 pub fn validate(profile: &Profile) -> Result<(), InternalError> {
     // 1. If platform == "Win32", user_agent must contain "Windows".
     if profile.browser.platform == "Win32" && !profile.browser.user_agent.contains("Windows") {
@@ -75,8 +80,7 @@ mod tests {
     use sgida_ports::MasterSeed;
 
     fn base() -> Profile {
-        Profile::from_seed(MasterSeed::from_bytes([42u8; 32]))
-            .unwrap_or_else(|e| panic!("fixture must build: {e}"))
+        Profile::from_seed(MasterSeed::from_bytes([42u8; 32])).unwrap()
     }
 
     // ---- rule 1: Win32 requires "Windows" in the UA ----------------------

@@ -20,7 +20,7 @@ impl CanvasProfile {
     /// Generates a canvas profile from a seed, using catalog-provided WebGL strings.
     pub fn from_seed(seed: &[u8; 32], webgl_vendor: String, webgl_renderer: String) -> Self {
         let mut rng = ChaCha12Rng::from_seed(*seed);
-        let noise_seed = rng.gen();
+        let noise_seed = rng.r#gen();
 
         Self {
             noise_seed,

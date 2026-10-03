@@ -33,32 +33,31 @@ impl Credentials {
     pub fn from_seed(seed: &[u8; 32]) -> Self {
         let mut rng = ChaCha12Rng::from_seed(*seed);
 
-        let username = format!("user_{}", rng.gen::<u32>());
-        let password = SecretString::new(format!("pass_{}", rng.gen::<u64>()));
-        let email_local = format!("user_{}", rng.gen::<u32>());
+        let username = format!("user_{}", rng.r#gen::<u32>());
+        let password = SecretString::new(format!("pass_{}", rng.r#gen::<u64>()));
+        let email_local = format!("user_{}", rng.r#gen::<u32>());
 
         let year = rng.gen_range(1980..=2000i32);
         let month = rng.gen_range(1..=12u32);
         let day = rng.gen_range(1..=28u32);
 
-        let birth_date = match NaiveDate::from_ymd_opt(year, month, day) {
-            Some(d) => d,
-            None => {
-                let mut y = 1990;
-                let mut m = 1;
-                let mut d = 1;
-                loop {
-                    if let Some(date) = NaiveDate::from_ymd_opt(y, m, d) {
-                        break date;
-                    }
-                    d += 1;
-                    if d > 28 {
-                        d = 1;
-                        m += 1;
-                        if m > 12 {
-                            m = 1;
-                            y += 1;
-                        }
+        let birth_date = if let Some(d) = NaiveDate::from_ymd_opt(year, month, day) {
+            d
+        } else {
+            let mut y = 1990;
+            let mut m = 1;
+            let mut d = 1;
+            loop {
+                if let Some(date) = NaiveDate::from_ymd_opt(y, m, d) {
+                    break date;
+                }
+                d += 1;
+                if d > 28 {
+                    d = 1;
+                    m += 1;
+                    if m > 12 {
+                        m = 1;
+                        y += 1;
                     }
                 }
             }

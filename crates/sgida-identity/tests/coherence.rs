@@ -1,9 +1,10 @@
+#![allow(clippy::unwrap_used)]
 //! Coherence validation tests.
 
 use proptest::prop_assert;
+use sgida_identity::Profile;
 use sgida_identity::error::InternalError;
 use sgida_identity::validator;
-use sgida_identity::Profile;
 use sgida_ports::MasterSeed;
 
 fn get_valid_profile() -> Profile {

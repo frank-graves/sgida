@@ -25,7 +25,19 @@ pub struct DerivedSeeds {
     pub credentials: [u8; 32],
 }
 
+impl std::fmt::Debug for DerivedSeeds {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("DerivedSeeds").finish_non_exhaustive()
+    }
+}
+
 /// Derives sub-seeds from a master seed using HKDF-SHA256.
+///
+/// # Errors
+///
+/// Returns [`InternalError::Hkdf`] if HKDF expansion fails. For the
+/// fixed output sizes used here this cannot occur in practice, but the
+/// error is propagated instead of panicking per workspace policy.
 pub fn derive(master: &MasterSeed) -> Result<DerivedSeeds, InternalError> {
     let hkdf = Hkdf::<Sha256>::new(None, master.expose_to_provider());
 

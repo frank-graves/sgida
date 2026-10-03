@@ -13,6 +13,14 @@ pub struct InMemoryIdentityProvider {
     profiles: DashMap<Uuid, Profile>,
 }
 
+impl std::fmt::Debug for InMemoryIdentityProvider {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("InMemoryIdentityProvider")
+            .field("profile_count", &self.profiles.len())
+            .finish_non_exhaustive()
+    }
+}
+
 impl InMemoryIdentityProvider {
     /// Creates a new in-memory identity provider.
     pub fn new() -> Self {
@@ -68,6 +76,6 @@ impl IdentityProvider for InMemoryIdentityProvider {
         &self,
         handle: &ProfileHandle,
     ) -> impl std::future::Future<Output = Result<(), IdentityError>> + Send {
-        Box::pin(ready(self.destroy_sync(handle)))
+        ready(self.destroy_sync(handle))
     }
 }

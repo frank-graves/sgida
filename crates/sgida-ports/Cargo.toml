@@ -1,9 +1,11 @@
 [package]
 name = "sgida-ports"
-version = "0.1.0"
-edition = "2024"
+version.workspace = true
+edition.workspace = true
 description = "Trait contracts and shared types for SGIDA. No logic, no I/O, no state."
-license = "MIT OR Apache-2.0"
+license.workspace = true
+rust-version.workspace = true
+authors.workspace = true
 
 [dependencies]
 thiserror.workspace = true
@@ -15,3 +17,6 @@ serde.workspace = true
 serde_json.workspace = true
 tokio = { workspace = true, features = ["macros", "rt"] }
 mockall.workspace = true
+
+[lints]
+workspace = true

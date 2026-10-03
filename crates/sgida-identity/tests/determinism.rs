@@ -1,3 +1,4 @@
+#![allow(clippy::unwrap_used)]
 //! Determinism tests for sgida-identity.
 
 use proptest::prop_assert_eq;

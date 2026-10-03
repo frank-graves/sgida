@@ -2,6 +2,8 @@
 //! The core Profile structure.
 
 use std::fmt;
+
+use rand::RngCore;
 use uuid::Uuid;
 
 use crate::behavior::BehaviorProfile;
@@ -53,6 +55,12 @@ impl fmt::Debug for Profile {
 
 impl Profile {
     /// Generates a deterministic profile from a master seed.
+    ///
+    /// # Errors
+    ///
+    /// Returns [`InternalError::Coherence`] if the generated profile
+    /// fails coherence validation, or propagates any subsystem
+    /// generation error.
     pub fn from_seed(seed: MasterSeed) -> Result<Self, InternalError> {
         let derived = seed::derive(&seed)?;
         let id = Uuid::from_bytes(derived.profile_id);
@@ -87,9 +95,12 @@ impl Profile {
     }
 
     /// Generates a random profile using OS randomness.
+    ///
+    /// # Errors
+    ///
+    /// Propagates any error from [`Profile::from_seed`].
     pub fn random() -> Result<Self, InternalError> {
         let mut seed = [0u8; 32];
-        use rand::RngCore;
         rand::rngs::OsRng.fill_bytes(&mut seed);
         let master = MasterSeed::from_bytes(seed);
         Self::from_seed(master)
